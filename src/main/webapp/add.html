@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <title>Add Note</title>
+</head>
+
+<body>
+    <h1>Dumb Notion, the dumb version of Notion</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="noteList.html">View Notes</a>
+        <a href="add.html">Create Note</a>
+        <a href="edit.html">Edit Note</a>
+    </nav>
+    <h1>Add Note</h1>
+
+    <form method="POST" action="/addAndEditNote.html">
+        <input type="hidden" name="mode" value="add" />
+        <label for="title-box">Title</label>
+        <input type="text" name="title" id="title-box" placeholder="Enter note title"/>
+        <label for="text-field">Text</label>
+        <textarea name="text" rows="20" id="text-field" cols="80" placeholder="Write your notes here"></textarea>
+        <label for="url-link">URL</label>
+        <input type="text" name="url" id="url-link" placeholder="Enter URL"/>
+        <label for="image-file">Image</label>
+        <input type="file" name="image" id="image-file" accept="image/*" onchange="loadFile(event)">
+        <img id="output" width="500" />
+        <br>
+        <input type="submit" value="Add Note">
+    </form>
+
+    <script src="index.js"></script>
+</body>
+</html>
